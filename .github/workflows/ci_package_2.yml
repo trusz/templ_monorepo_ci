@@ -1,5 +1,5 @@
 # This CI will only trigger if `package_2` has a change
-name: CI_Package_1
+name: CI_Package_2
 
 on:
   push:
