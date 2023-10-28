@@ -1,0 +1,15 @@
+# This CI will only trigger if `package_2` has a change
+name: CI_Package_1
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: 'packages/package_2/**' # ⚠️ This is the important part
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Package 2 Deployed
