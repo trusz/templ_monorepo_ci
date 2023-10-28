@@ -1,0 +1,14 @@
+# This CI will only trigger if `package_1` has a pull request
+name: 'PR: Package 2'
+
+on:
+  pull_request:
+    paths: 'packages/package_2/**' # ⚠️ This is the important part
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Package 2 PR checked
